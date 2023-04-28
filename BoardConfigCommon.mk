@@ -59,6 +59,7 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 
 ## Build
 BUILD_BROKEN_DUP_RULES := true
+TARGET_KERNEL_OPTIONAL_LD := true
 
 ## Dynamic Partitions
 BOARD_SUPER_PARTITION_SIZE := 7736393728
@@ -106,7 +107,8 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_SOURCE := kernel/samsung/r7
 TARGET_KERNEL_ADDITIONAL_FLAGS += LD=ld.lld AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip
-
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 ## Keymaster
 TARGET_KEYMASTER_VARIANT := samsung
 
@@ -149,7 +151,7 @@ VENDOR_SECURITY_PATCH := 2022-02-01
 
 ## SELinux
 BOARD_SEPOLICY_TEE_FLAVOR := mobicore
-include device/awaken/sepolicy/exynos/sepolicy.mk
+include device/lineage/sepolicy/exynos/sepolicy.mk
 include device/samsung_slsi/sepolicy/sepolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor

@@ -27,7 +27,6 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.1-impl:32 \
     android.hardware.soundtrigger@2.0-impl:32 \
     android.hidl.allocator@1.0.vendor \
-    audio.a2dp.default \
     audio.bluetooth.default \
     audio.r_submix.default \
     audio.usb.default \
@@ -49,7 +48,6 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.1-impl:64 \
     android.hardware.bluetooth@1.1-service \
 
 PRODUCT_COPY_FILES += \
@@ -58,8 +56,7 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.5-service_64.exynos9810 \
-    libsensorndkbridge \
-    Snap
+    libsensorndkbridge
 
 # ConfigStore
 PRODUCT_PACKAGES += \
@@ -80,10 +77,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libdrm.vendor:64
 
-# Doze
-PRODUCT_PACKAGES += \
-    SamsungDoze
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor:32 \
@@ -95,10 +88,6 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
-
-# Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.samsung
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
@@ -146,13 +135,8 @@ PRODUCT_COPY_FILES += \
 
 # Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.0-service.samsung \
     libkeymaster4support.vendor:64 \
     libkeymaster4_1support.vendor:64
-
-# Lights
-PRODUCT_PACKAGES += \
-    android.hardware.light-service.samsung
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -172,8 +156,7 @@ PRODUCT_PACKAGES += \
     NfcNci \
     Tag \
     vendor.nxp.nxpese@1.0.vendor:64 \
-    vendor.nxp.nxpnfc@1.0.vendor:64 \
-    vendor.nxp.nxpnfc@1.1.vendor:64
+    vendor.nxp.nxpnfc@1.0.vendor:64
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/nfc/libnfc-sec-vendor.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-sec-vendor.conf
@@ -238,10 +221,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power-service.samsung-libperfmgr
-
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
@@ -255,13 +234,9 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.2.vendor:64 \
     android.hardware.radio.deprecated@1.0.vendor:64
 
-PRODUCT_PACKAGES += \
-    secril_config_svc
-
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.contexthub@1.0.vendor:64 \
-    android.hardware.sensors@2.1-service.samsung-multihal
+    android.hardware.contexthub@1.0.vendor:64
 
 # Shims
 PRODUCT_PACKAGES += \
@@ -284,20 +259,12 @@ PRODUCT_PACKAGES += \
     vendor.samsung.hardware.spen-service.davinci
 endif
 
-# Thermal
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0-service.samsung
-
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/thermal/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
 
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.1-service.typec
-
-# Vibrator
-PRODUCT_PACKAGES += \
-    android.hardware.vibrator-service.samsung
 
 # WiFi
 PRODUCT_PACKAGES += \
